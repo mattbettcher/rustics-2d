@@ -1,8 +1,8 @@
 use std::f32;
-use std::ops::*;
+use std::ops::{Mul, AddAssign, Neg, Sub, Add, SubAssign};
 
 /// 2D Vector
-#[derive(Debug)]
+#[derive(Debug, Clone, Copy)]
 pub struct V2 {
     /// X component of the vector.
     pub x: f32,
