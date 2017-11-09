@@ -1,5 +1,5 @@
 use std::f32;
-use std::ops::{Mul, AddAssign, Neg, Sub, Add, SubAssign};
+use std::ops::{Add, AddAssign, Mul, Neg, Sub, SubAssign};
 
 /// 2D Vector
 #[derive(Debug, Clone, Copy)]
@@ -50,7 +50,7 @@ impl V2 {
         (self.x * self.x + self.y * self.y)
     }
 
-    /// Normalizes the vector to a length of 0 - 1 without 
+    /// Normalizes the vector to a length of 0 - 1 without
     /// changing its direction.
     ///
     /// ```rust
