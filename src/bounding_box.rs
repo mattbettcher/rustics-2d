@@ -1,5 +1,3 @@
-use std::f32;
-use std::ops::*;
 use V2;
 
 /// 2D Bounding Box
