@@ -1,11 +1,11 @@
 use rayon::prelude::*;
-use {Body, V2};
+use {Body, Vector2};
 
 /// Container for the simulation.
 pub struct World {
     pub bodies: Vec<Body>,
     /// Gravity in this `World`. The default gravity is (0, -9.81).
-    pub gravity: V2,
+    pub gravity: Vector2,
 
     pub allow_deactivation: bool,
 
@@ -18,7 +18,7 @@ impl World {
     pub fn new() -> Self {
         World {
             bodies: vec![],
-            gravity: V2::new(0.0, 0.0), //-9.81),
+            gravity: Vector2::new(0.0, -9.81),
             allow_deactivation: false,
             angular_damping_factor: 0.95,
             linear_damping_factor: 0.95,
@@ -67,7 +67,7 @@ impl World {
                     b.linear_velocity += b.force * b.inv_mass * timestep;
                     b.angular_velocity += b.torque * b.inv_inertia * timestep;
                 }
-                b.force = V2::ZERO;
+                b.force = Vector2::new(0.0, 0.0);
                 b.torque = 0.0;
             });
     }

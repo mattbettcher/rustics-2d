@@ -2,17 +2,17 @@
 
 //! 
 extern crate rayon;
+extern crate nalgebra as na;
 
-mod v2;
-mod matrix;
 mod bounding_box;
 mod body;
 mod world;
 mod mpr;
 
+pub type Vector2 = na::Vector2<f32>;
+
 // reexports
-pub use v2::V2;
-pub use matrix::M22;
+pub use na::*;
 pub use bounding_box::BoundingBox;
 pub use body::Body;
 pub use world::World;
